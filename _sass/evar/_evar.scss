@@ -614,7 +614,7 @@ body {
   }
 }
 
-.signup-form {
+.standalone {
   .container {
     background-color: #f8f8f8;
     background-image: url(../images/cocktails-bg.jpg);
@@ -733,5 +733,10 @@ body {
         margin: 2em 0;
       }
     }
+  }
+
+  .policy-content {
+    font-size: 13px;
+    color: #666;
   }
 }

@@ -1,98 +1,90 @@
 ---
-layout: default
+layout: standalone
 ---
 
-<section class="signup-form">
-  <div class="container">
-    <div class="form-container">
-      <div class="inner-container">
-        <h2 class="form-title">회원가입</h2>
+<h2 class="form-title">회원가입</h2>
 
-        <form action="/" onsubmit="return false">
-          <div class="form-group">
-            <div class="form-label">
-              <label for="field-name">이름</label>
-            </div>
-            <div class="form-field">
-              <input type="text" id="field-name" placeholder="필수 정보입니다.">
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="form-label">
-              <label for="field-email">이메일</label>
-            </div>
-            <div class="form-field">
-              <input type="email" id="field-email" placeholder="필수 정보입니다.">
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="form-label">
-              <label for="field-password">비밀번호</label>
-            </div>
-            <div class="form-field">
-              <input type="password" id="field-password" placeholder="필수 정보입니다.">
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="form-label">
-              <label for="field-password-confirmation">비밀번호 확인</label>
-            </div>
-            <div class="form-field">
-              <input type="password" id="field-password-confirmation" placeholder="필수 정보입니다.">
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="form-label">
-              <label for="field-phone">휴대폰 번호</label>
-            </div>
-            <div class="form-field">
-              <input type="text" id="field-phone">
-              <label>
-                <input type="checkbox" class="checkbox" name="checkbox-accept-sms" value="">
-                문자수신 허용
-              </label>
-            </div>
-          </div>
-
-          <hr>
-
-          <div class="form-group">
-            <div class="form-label">
-              <label for="field-terms-of-use">이용약관</label>
-            </div>
-            <div class="form-field full-width">
-              <div class="policy-content">
-                {% include policies/terms-of-use.html %}
-              </div>
-              <label>
-                <input type="checkbox" class="checkbox" name="checkbox-terms-of-use" value="">
-                이용약관에 동의합니다.
-              </label>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="form-label">
-              <label for="field-privacy-policy">개인정보보호정책</label>
-            </div>
-            <div class="form-field full-width">
-              <div class="policy-content">
-                {% include policies/privacy-policy.html %}
-              </div>
-              <label>
-                <input type="checkbox" class="checkbox" name="checkbox-privacy-policy" value="">
-                개인정보 수집 및 이용에 동의합니다.
-              </label>
-            </div>
-          </div>
-
-          <hr>
-
-          <div class="form-buttons">
-            <a href="javascript:void(0)" class="button cancel">취소</a>
-            <input type="submit" value="확인" class="button">
-          </div>
-        </form>
-      </div>
+<form action="/" onsubmit="return false">
+  <div class="form-group">
+    <div class="form-label">
+      <label for="field-name">이름</label>
+    </div>
+    <div class="form-field">
+      <input type="text" id="field-name" placeholder="필수 정보입니다.">
     </div>
   </div>
-</section>
+  <div class="form-group">
+    <div class="form-label">
+      <label for="field-email">이메일</label>
+    </div>
+    <div class="form-field">
+      <input type="email" id="field-email" placeholder="필수 정보입니다.">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-label">
+      <label for="field-password">비밀번호</label>
+    </div>
+    <div class="form-field">
+      <input type="password" id="field-password" placeholder="필수 정보입니다.">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-label">
+      <label for="field-password-confirmation">비밀번호 확인</label>
+    </div>
+    <div class="form-field">
+      <input type="password" id="field-password-confirmation" placeholder="필수 정보입니다.">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-label">
+      <label for="field-phone">휴대폰 번호</label>
+    </div>
+    <div class="form-field">
+      <input type="text" id="field-phone">
+      <label>
+        <input type="checkbox" class="checkbox" name="checkbox-accept-sms" value="">
+        문자수신 허용
+      </label>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="form-group">
+    <div class="form-label">
+      <label for="field-terms-of-use">이용약관</label>
+    </div>
+    <div class="form-field full-width">
+      <div class="policy-content">
+        {% include policies/terms-of-use.html %}
+      </div>
+      <label>
+        <input type="checkbox" class="checkbox" name="checkbox-terms-of-use" value="">
+        이용약관에 동의합니다.
+      </label>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-label">
+      <label for="field-privacy-policy">개인정보보호정책</label>
+    </div>
+    <div class="form-field full-width">
+      <div class="policy-content">
+        {% include policies/privacy-policy.html %}
+      </div>
+      <label>
+        <input type="checkbox" class="checkbox" name="checkbox-privacy-policy" value="">
+        개인정보 수집 및 이용에 동의합니다.
+      </label>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="form-buttons">
+    <a href="javascript:void(0)" class="button cancel">취소</a>
+    <input type="submit" value="확인" class="button">
+  </div>
+</form>
