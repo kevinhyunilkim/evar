@@ -55,6 +55,7 @@ body {
   .evar-logo {
     @include clearfix;
     float: left;
+    width: 500px;
 
     a {
       float: left;
