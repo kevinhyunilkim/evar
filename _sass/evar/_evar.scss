@@ -1,34 +1,8 @@
 // Copyright (c) 2014 Kinda Labs
 
-$brand-color: $base-accent-color;
-
-@mixin evar-button($base-color: $brand-color, $text-size: 20px, $padding: 15px 45px) {
-  background-color: $base-color;
-  color: #fff;
-  font-size: $text-size;
-  font-weight: bold;
-  padding: $padding;
-  display: inline-block;
-  border-radius: 100px;
-  @include transition(background-color .1s linear);
-
-  &:hover,
-  &:focus {
-    background-color: darken($base-color, 10%);
-  }
-}
-
-@mixin container {
-  position: relative;
-  width: 1440px;
-  margin: 0 auto;
-}
-
-@mixin inner-container {
-  position: relative;
-  width: 1170px;
-  margin: 0 auto;
-}
+@import "mixins";
+@import "shade";
+@import "media-viewer";
 
 body {
   background-color: #353535;

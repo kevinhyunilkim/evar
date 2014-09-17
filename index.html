@@ -9,7 +9,7 @@ layout: default
       <p>에바를 통해 만나는 새로운 세상, 놀라운 경험을 지금 바로 시작하세요.</p>
     </div>
     <div class="hero-device animated fadeInUp">
-      <a href="javascript:void(0)">
+      <a href="#">
         <div class="device-screen">
           <h4>Watch a video</h4>
             <img src="{{ "/images/hero-play-icon.png" | prepend: site.baseurl }}" alt="" class="play-icon">
@@ -24,7 +24,7 @@ layout: default
     <div class="text-container">
       <h1>Breating life into printed matters</h1>
       <p>에바의 증강현실 기술을 통해 다양한 이미지를 더욱 생동감 넘치는 멀티미디어 컨텐츠로</p>
-      <a href="javascript:void(0)" class="button">에바 적용사례 보기</a>
+      <a href="#" class="button" id="view-use-cases">에바 적용사례 보기</a>
     </div>
     <img src="{{ "/images/use-cases.jpg" | prepend: site.baseurl }}" alt="">
   </div>
@@ -37,8 +37,8 @@ layout: default
       <p>에바 어플만 있으면 전 세계 어디서나 다양한 증강현실<br>컨텐츠를 손쉽게 체험할 수 있습니다.</p>
     </div>
     <div class="app-buttons">
-      <a href="javascript:void(0)" class="app-store"><img src="{{ "/images/app-store.png" | prepend: site.baseurl }}" alt=""></a>
-      <a href="javascript:void(0)" class="google-play"><img src="{{ "/images/google-play.png" | prepend: site.baseurl }}" alt=""></a>
+      <a href="javascript:void(0)" class="app-store" target="_blank"><img src="{{ "/images/app-store.png" | prepend: site.baseurl }}" alt=""></a>
+      <a href="javascript:void(0)" class="google-play" target="_blank"><img src="{{ "/images/google-play.png" | prepend: site.baseurl }}" alt=""></a>
     </div>
   </div>
 </section>
@@ -88,3 +88,5 @@ layout: default
     </div>
   </div>
 </section>
+
+{% include media-viewer.html %}
