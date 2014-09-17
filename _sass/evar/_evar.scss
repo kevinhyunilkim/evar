@@ -1,6 +1,6 @@
 // Copyright (c) 2014 Kinda Labs
 
-$brand-color: #0092ff;
+$brand-color: $base-accent-color;
 
 @mixin evar-button($base-color: $brand-color, $text-size: 20px, $padding: 15px 45px) {
   background-color: $base-color;
@@ -610,6 +610,128 @@ body {
       color: #666;
       font-size: 12px;
       margin-bottom: 0.5em;
+    }
+  }
+}
+
+.signup-form {
+  .container {
+    background-color: #f8f8f8;
+    background-image: url(../images/cocktails-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center 226px;
+  }
+
+  .form-container {
+    position: relative;
+    width: 860px;
+    margin: 0 auto;
+    padding: 50px 0 80px;
+
+    .inner-container {
+      border: 1px solid #e6e6e6;
+      padding: 30px 40px;
+      background-color: #fff;
+
+      .form-title {
+        font-size: 24px;
+        color: #666;
+        border-bottom: 1px solid #ededed;
+        padding-bottom: 25px;
+        margin-bottom: 35px;
+      }
+
+      .form-group {
+        @include clearfix;
+        margin-bottom: 10px;
+
+        .form-label {
+          @include span-columns(3);
+          line-height: 38px;
+          color: #333;
+        }
+
+        .form-field {
+          @include span-columns(6);
+
+          textarea,
+          #{$all-text-inputs},
+          select[multiple=multiple] {
+            font-size: 13px;
+            color: #666;
+            padding: 0.8em 0.8em;
+          }
+
+          &.full-width {
+            @include span-columns(9);
+          }
+
+          .policy-content {
+            @include box-sizing(border-box);
+            @include transition(border-color);
+            background-color: white;
+            border-radius: $form-border-radius;
+            border: 1px solid $form-border-color;
+            box-shadow: $form-box-shadow;
+            font-family: $form-font-family;
+            font-size: 13px;
+            margin-bottom: $base-line-height / 2;
+            padding: 0.8em 0.8em;
+            width: 100%;
+            height: 215px;
+            overflow: auto;
+            color: #666;
+          }
+
+          label {
+            margin-top: 15px;
+            margin-bottom: 20px;
+            font-size: 13px;
+            color: #666;
+          }
+        }
+      }
+
+      .form-buttons {
+        padding: 10px 0;
+        text-align: center;
+
+        .button {
+          padding: 18px 15px;
+          min-width: 230px;
+
+          &.cancel {
+            @include appearance(none);
+            -webkit-font-smoothing: antialiased;
+            background-color: #7f7f7f;
+            border-radius: $base-border-radius;
+            color: white;
+            display: inline-block;
+            font-size: $base-font-size;
+            font-weight: bold;
+            line-height: 1;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            user-select: none;
+            vertical-align: middle;
+            white-space: nowrap;
+            padding: 18px 15px;
+            min-width: 230px;
+            margin-right: 5px;
+
+            &:hover {
+              background-color: darken(#7f7f7f, 10%);
+              color: white;
+            }
+          }
+        }
+      }
+
+      hr {
+        border-color: #ededed;
+        margin: 2em 0;
+      }
     }
   }
 }
