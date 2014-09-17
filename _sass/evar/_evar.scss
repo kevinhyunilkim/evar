@@ -1,0 +1,614 @@
+// Copyright (c) 2014 Kinda Labs
+
+$brand-color: #0092ff;
+
+@mixin evar-button($base-color: $brand-color, $text-size: 20px, $padding: 15px 45px) {
+  background-color: $base-color;
+  color: #fff;
+  font-size: $text-size;
+  font-weight: bold;
+  padding: $padding;
+  display: inline-block;
+  border-radius: 100px;
+  @include transition(background-color .1s linear);
+
+  &:hover,
+  &:focus {
+    background-color: darken($base-color, 10%);
+  }
+}
+
+@mixin container {
+  position: relative;
+  width: 1440px;
+  margin: 0 auto;
+}
+
+@mixin inner-container {
+  position: relative;
+  width: 1170px;
+  margin: 0 auto;
+}
+
+body {
+  background-color: #353535;
+  background-image: url(../images/body-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+.container {
+  @include container;
+}
+
+.header {
+  @include container;
+  background-color: #f8f8f8;
+
+  .inner-container {
+    @include inner-container;
+    @include clearfix;
+
+    padding: 35px 0;
+  }
+
+  .evar-logo {
+    @include clearfix;
+    float: left;
+
+    a {
+      float: left;
+      line-height: 45px;
+
+      img {
+        vertical-align: middle;
+      }
+    }
+
+    h4 {
+      float: left;
+      font-size: 14px;
+      font-weight: normal;
+      color: #999;
+      margin-left: 30px;
+      padding-left: 30px;
+      border-left: 1px solid #ddd;
+      line-height: 45px;
+    }
+  }
+
+  .nav-buttons {
+    float: right;
+
+    .evar-studio {
+      @include evar-button($brand-color, 16px, 10px 25px);
+      margin-right: 10px;
+    }
+
+    .app-download {
+      @include evar-button(#999, 16px, 10px 25px);
+    }
+  }
+
+  .header-right {
+    float: right;
+    line-height: 45px;
+    margin-left: 30px;
+    padding-left: 30px;
+    border-left: 1px solid #ddd;
+
+    a {
+      font-size: 16px;
+      font-weight: bold;
+      color: #666;
+
+      &:hover,
+      &:focus {
+        color: darken(#666, 10%);
+      }
+    }
+  }
+}
+
+.hero {
+  .container {
+    background-color: #f8f8f8;
+    background-image: url(../images/cocktails-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    height: 770px;
+    border-bottom: 1px solid #e4e4e4;
+  }
+
+  .hero-device {
+    position: absolute;
+    width: 661px;
+    height: 431px;
+    background-image: url(../images/hero-device.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    bottom: 0;
+    left: 50%;
+    margin-left: -335px;
+
+    .device-screen {
+      position: absolute;
+      width: 305px;
+      height: 172px;
+      top: 43px;
+      left: 184px;
+      text-align: center;
+      opacity: .7;
+      @include transition(opacity .1s linear);
+
+      h4 {
+        color: $brand-color;
+        text-transform: uppercase;
+        font-size: 14px;
+        margin: 30px 0 15px;
+      }
+
+      &:hover,
+      &:focus {
+        opacity: 1;
+      }
+    }
+  }
+
+  .text-container {
+    width: 820px;
+    margin: 0 auto;
+    padding-top: 50px;
+    text-align: center;
+
+    h1 {
+      font-weight: 300;
+      font-size: 48px;
+      color: $brand-color;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 20px;
+      color: #666;
+      letter-spacing: -1px;
+    }
+  }
+}
+
+.use-cases {
+  .container {
+    background-color: #fff;
+    padding-bottom: 100px;
+  }
+
+  .text-container {
+    width: 820px;
+    margin: 0 auto;
+    padding-top: 100px;
+    padding-bottom: 120px;
+    text-align: center;
+
+    h1 {
+      font-weight: 300;
+      font-size: 48px;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 20px;
+      color: #666;
+      margin-bottom: 50px;
+      letter-spacing: -1px;
+    }
+
+    .button {
+      @include evar-button;
+    }
+  }
+}
+
+#app-download {
+  .container {
+    background-color: $brand-color;
+    background-image: url(../images/app-download-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 440px;
+  }
+
+  .text-container {
+    width: 450px;
+    padding-top: 85px;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 20px;
+      line-height: 1.3em;
+      letter-spacing: -1px;
+    }
+
+    p {
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: -1px;
+      line-height: 1.6;
+    }
+  }
+
+  .app-buttons {
+    width: 450px;
+    padding-top: 25px;
+    margin: 0 auto;
+    text-align: center;
+
+    .app-store {
+      margin-right: 15px;
+    }
+  }
+}
+
+#evar-studio {
+  .container {
+    background-color: #f3f3f3;
+    background-image: url(../images/evar-studio-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;
+    height: 1080px;
+  }
+
+  .text-container {
+    width: 880px;
+    padding-top: 100px;
+    margin: 0 auto;
+    text-align: center;
+
+    h1 {
+      font-weight: 300;
+      font-size: 48px;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 20px;
+      color: #666;
+      letter-spacing: -1px;
+      margin-bottom: 50px;
+    }
+
+    .button {
+      @include evar-button;
+    }
+  }
+}
+
+.moreover {
+  .container {
+    background-color: #f3f3f3;
+    padding-bottom: 80px;
+  }
+
+  .text-container {
+    width: 700px;
+    margin: 0 auto;
+    padding-bottom: 70px;
+    text-align: center;
+
+    h1 {
+      font-size: 36px;
+      color: #333;
+      letter-spacing: -1px;
+    }
+
+    p {
+      font-size: 24px;
+      color: #666;
+      letter-spacing: -1px;
+      margin-bottom: 5px;
+    }
+  }
+
+  .tabs {
+    @include inner-container;
+
+    .tab-links {
+      margin: 0;
+
+      .tab-link {
+        padding: 0;
+        border: 1px solid #ddd;
+
+        a {
+          display: block;
+          font-weight: bold;
+          font-size: 20px;
+          color: #aaa;
+          padding: 25px 0;
+          background-color: #f6f6f6;
+          text-align: center;
+        }
+
+        &.is-active {
+          border-bottom: 1px solid #fff;
+
+          a {
+            background-color: #fff;
+            color: $brand-color;
+          }
+        }
+      }
+    }
+
+    .tab-contents {
+      min-height: 200px;
+      background-color: #fff;
+      border-left: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+
+      .tab-content {
+        display: none;
+
+        &.is-open {
+          display: block;
+        }
+      }
+    }
+
+    .tabs-footer {
+      background-color: #fff;
+      border-left: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+      padding: 20px 0;
+
+      h3 {
+        font-weight: normal;
+        font-size: 22px;
+        color: #333;
+        display: inline-block;
+        margin-right: 25px;
+      }
+
+      .button {
+        @include evar-button;
+      }
+    }
+  }
+}
+
+#tab-how-to {
+  .tab-content-container {
+    padding: 70px 30px 50px;
+
+    ul {
+      @include clearfix;
+
+      li {
+        @include span-columns(3);
+
+        h4 {
+          color: #333;
+          font-size: 22px;
+          font-weight: normal;
+        }
+
+        .how-to-icon {
+          width: 100%;
+          margin: 20px 0 30px;
+          background-color: #f5f5f5;
+          text-align: center;
+        }
+
+        p {
+          color: #333;
+          font-size: 16px;
+
+          .highlight {
+            color: $brand-color;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
+
+#tab-pricing {
+  .tab-content-container {
+    padding: 70px 30px 50px;
+
+    .tab-content-copy {
+      color: #333;
+      font-size: 22px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    ul {
+      @include clearfix;
+
+      .pricing-box {
+        @include span-columns(3);
+
+        h3 {
+          color: #fff;
+          font-size: 22px;
+          text-align: center;
+          background-color: $brand-color;
+          padding: 15px 0;
+        }
+
+        .pricing-point {
+          background-color: #f4f4f4;
+          text-align: center;
+          min-height: 250px;
+          position: relative;
+          padding: 40px 20px 0;
+
+          h1 {
+            font-size: 50px;
+            color: #333;
+          }
+
+          p {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 0;
+
+            .highlight {
+              font-weight: bold;
+              color: $brand-color;
+            }
+          }
+
+          .side-text {
+            font-size: 13px;
+            color: #666;
+          }
+
+          .button {
+            background-color: #333;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 15px 0;
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 20px;
+            margin-left: 20px;
+            margin-right: 20px;
+            border-radius: 5px;
+            line-height: 1;
+            @include transition(background-color .1s linear);
+
+            &:hover,
+            &:focus {
+              background-color: lighten(#333, 10%);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#tab-partners {
+  .tab-content-container {
+    padding: 70px 30px 50px;
+
+    .tab-content-copy {
+      color: #333;
+      font-size: 22px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    ul {
+      @include clearfix;
+
+      .partner-logo {
+        @include span-columns(2);
+        @include omega(6n);
+
+        border: 1px solid #eee;
+        margin-bottom: 2%;
+        height: 105px;
+        line-height: 105px;
+        padding: 0 20px;
+        text-align: center;
+
+        img {
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  .footer-links {
+    @include container;
+    background-color: #252f38;
+
+    .inner-container {
+      @include inner-container;
+      @include clearfix;
+
+      padding: 45px 0 35px;
+    }
+
+    .footer-logo {
+      float: left;
+    }
+
+    .page-links {
+      float: left;
+      margin-left: 35px;
+
+      li {
+        display: inline;
+        line-height: 31px;
+        padding: 0 15px;
+
+        a {
+          font-size: 14px;
+          font-weight: bold;
+          color: #999;
+
+          &:hover,
+          &:focus {
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    .social-links {
+      @include clearfix;
+      float: right;
+
+      li {
+        float: left;
+
+        &.facebook-logo {
+          margin-left: 15px;
+        }
+      }
+
+      img {
+        opacity: .7;
+
+        &:hover,
+        &:focus {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .footer-business-info {
+    @include container;
+    background-color: #171d23;
+
+    .inner-container {
+      @include inner-container;
+
+      padding: 35px 0;
+    }
+
+    p {
+      color: #666;
+      font-size: 12px;
+      margin-bottom: 0.5em;
+    }
+  }
+}

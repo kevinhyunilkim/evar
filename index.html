@@ -2,3 +2,89 @@
 layout: default
 ---
 
+<section class="hero">
+  <div class="container">
+    <div class="text-container">
+      <h1>New perspective to see the world</h1>
+      <p>에바를 통해 만나는 새로운 세상, 놀라운 경험을 지금 바로 시작하세요.</p>
+    </div>
+    <div class="hero-device">
+      <a href="javascript:void(0)">
+        <div class="device-screen">
+          <h4>Watch a video</h4>
+            <img src="{{ "/images/hero-play-icon.png" | prepend: site.baseurl }}" alt="" class="play-icon">
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="use-cases">
+  <div class="container">
+    <div class="text-container">
+      <h1>Breating life into printed matters</h1>
+      <p>에바의 증강현실 기술을 통해 다양한 이미지를 더욱 생동감 넘치는 멀티미디어 컨텐츠로</p>
+      <a href="javascript:void(0)" class="button">에바 적용사례 보기</a>
+    </div>
+    <img src="{{ "/images/use-cases.jpg" | prepend: site.baseurl }}" alt="">
+  </div>
+</section>
+
+<section id="app-download">
+  <div class="container">
+    <div class="text-container">
+      <h1>에바 어플 다운받고,<br>증강현실을 체험하세요!</h1>
+      <p>에바 어플만 있으면 전 세계 어디서나 다양한 증강현실<br>컨텐츠를 손쉽게 체험할 수 있습니다.</p>
+    </div>
+    <div class="app-buttons">
+      <a href="javascript:void(0)" class="app-store"><img src="{{ "/images/app-store.png" | prepend: site.baseurl }}" alt=""></a>
+      <a href="javascript:void(0)" class="google-play"><img src="{{ "/images/google-play.png" | prepend: site.baseurl }}" alt=""></a>
+    </div>
+  </div>
+</section>
+
+<section id="evar-studio">
+  <div class="container">
+    <div class="text-container">
+      <h1>Make a better experience with evar</h1>
+      <p>에바 스튜디오를 통해 누구나 손쉽게 증강현실 캠페인을 만들 수 있습니다.</p>
+      <a href="javascript:void(0)" class="button">에바 스튜디오 시작하기</a>
+    </div>
+  </div>
+</section>
+
+<section class="moreover">
+  <div class="container">
+    <div class="text-container">
+      <p>이미지 한장으로 경험하는 놀라운 마케팅 솔루션!</p>
+      <h1>대세는 증강현실! 지금 에바와 시작하세요!</h1>
+    </div>
+
+    <div class="tabs">
+      <table class="tab-links">
+        <tr>
+          <td class="tab-link is-active"><a href="#" data-target="#tab-how-to">어떻게 사용하나요?</a></td>
+          <td class="tab-link"><a href="#" data-target="#tab-pricing">저렴한 패키지 요금</a></td>
+          <td class="tab-link"><a href="#" data-target="#tab-partners">에바와 함께하는 고객사들</a></td>
+        </tr>
+      </table>
+
+      <div class="tab-contents">
+        <div id="tab-how-to" class="tab-content is-open">
+          {% include home/tab-how-to.html %}
+        </div>
+        <div id="tab-pricing" class="tab-content">
+          {% include home/tab-pricing.html %}
+        </div>
+        <div id="tab-partners" class="tab-content">
+          {% include home/tab-partners.html %}
+        </div>
+      </div>
+
+      <div class="tabs-footer">
+        <h3>지금 바로 에바의 놀라운 경험을 시작하세요!</h3>
+        <a href="javascript:void(0)" class="button">에바 스튜디오 시작하기</a>
+      </div>
+    </div>
+  </div>
+</section>
