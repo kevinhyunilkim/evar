@@ -104,3 +104,11 @@ $(document).ready(function() {
     }
   });
 });
+
+$(document).ready(function() {
+  $('.dropdown-panel-wrapper').on('click', '> a', function(event) {
+    event.preventDefault();
+    var dropdownPanel = $(this).closest('.dropdown-panel-wrapper').find('.dropdown-panel');
+    dropdownPanel.toggleClass('open');
+  });
+});

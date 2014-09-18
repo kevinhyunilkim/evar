@@ -67,15 +67,15 @@ body {
 
   .header-right {
     float: right;
-    line-height: 45px;
     margin-left: 30px;
     padding-left: 30px;
     border-left: 1px solid #ddd;
 
-    a {
+    a.text-link {
       font-size: 16px;
       font-weight: bold;
       color: #666;
+      line-height: 45px;
 
       &:hover,
       &:focus {
@@ -665,6 +665,17 @@ body {
             color: #666;
           }
         }
+
+        .remember-me {
+          font-size: 13px;
+          color: #666;
+          float: left;
+        }
+
+        .find-password-link {
+          font-size: 13px;
+          float: right;
+        }
       }
 
       .form-buttons {
@@ -707,11 +718,134 @@ body {
         border-color: #ededed;
         margin: 2em 0;
       }
+
+      .form-footer-links {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 13px;
+      }
     }
   }
 
   .policy-content {
     font-size: 13px;
     color: #666;
+  }
+}
+
+.dropdown-panel-wrapper {
+  position: relative;
+
+  .dropdown-panel {
+    display: none;
+    position: absolute;
+    right: 0;
+    z-index: 10;
+    background-color: #fff;
+    padding: 20px;
+    width: 330px;
+    border-radius: 3px;
+    margin-top: 10px;
+    border: 1px solid #e6e6e6;
+    box-shadow: 0 1px 1px rgba(0,0,0,.075);
+    -webkit-animation-duration: .2s;
+    -moz-animation-duration: .2s;
+    -ms-animation-duration: .2s;
+    -o-animation-duration: .2s;
+    animation-duration: .2s;
+
+    &.open {
+      display: block;
+    }
+
+    .arrow,
+    .arrow:after {
+      position: absolute;
+      display: block;
+      width: 0;
+      height: 0;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    .arrow {
+      border-width: 11px;
+      top: -22px;
+      right: 15px;
+      margin-top-width: 0;
+      border-bottom-color: #e6e6e6;
+
+      &:after {
+        content: "";
+        border-width: 10px;
+        top: 1px;
+        margin-left: -10px;
+        content: " ";
+        border-top-width: 0;
+        border-bottom-color: #fff;
+      }
+    }
+  }
+}
+
+.login-dropdown-panel {
+  .login-panel {
+    .form-group {
+      margin-bottom: 15px;
+
+      .form-field {
+        textarea,
+        #{$all-text-inputs},
+        select[multiple=multiple] {
+          font-size: 13px;
+          color: #666;
+          padding: 0.8em 0.8em;
+        }
+      }
+    }
+
+    .form-buttons {
+      .button {
+        padding: 0.8em 0.8em;
+        width: 100%;
+      }
+    }
+
+    .form-two-grid {
+      @include clearfix;
+      margin-top: 15px;
+
+      .grid-left {
+        float: left;
+      }
+
+      .grid-right {
+        float: right;
+      }
+    }
+
+    .remember-me {
+      font-size: 13px;
+      color: #666;
+      float: left;
+    }
+
+    .find-password-link {
+      font-size: 13px;
+    }
+
+    .form-footer-links {
+      font-size: 13px;
+      padding: 5px 0;
+
+      p {
+        margin: 0;
+      }
+    }
+
+    hr {
+      border-color: #ededed;
+      margin: 0.8em 0;
+    }
   }
 }

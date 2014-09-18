@@ -7,7 +7,13 @@
     </div>
 
     <div class="header-right">
-      <a href="javascript:void(0)">로그인</a>
+      <div class="dropdown-panel-wrapper">
+        <a href="javascript:void(0)" class="text-link">로그인</a>
+        <div class="dropdown-panel login-dropdown-panel animated fadeInDown">
+          <div class="arrow"></div>
+          {% include home/login-panel.html %}
+        </div>
+      </div>
     </div>
 
     <nav class="nav-buttons">
