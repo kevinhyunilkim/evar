@@ -34,8 +34,11 @@ $(document).ready(function() {
   $('.hero-device').on('click', 'a', function(event) {
     event.preventDefault();
     var video = document.getElementById('evar-video-element');
-    video.currentTime = 0;
-    video.play();
+
+    if (video.readyState === 4) {
+      video.currentTime = 0;
+      video.play();
+    }
 
     if (!$('html').hasClass('shaded')) {
       $('html').addClass('shaded');
