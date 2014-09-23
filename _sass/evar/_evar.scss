@@ -664,6 +664,21 @@ body {
             font-size: 13px;
             color: #666;
           }
+
+          .field-phone-wrapper {
+            .phone-area {
+              display: inline-block;
+              border: 1px solid $form-border-color;
+              height: 38px;
+              margin-bottom: 0;
+              vertical-align: middle;
+            }
+
+            .phone-number {
+              display: inline-block;
+              width: 154px;
+            }
+          }
         }
 
         .remember-me {

@@ -41,8 +41,16 @@ layout: standalone
     <div class="form-label">
       <label for="field-phone">휴대폰 번호</label>
     </div>
-    <div class="form-field">
-      <input type="text" id="field-phone">
+    <div class="form-field full-width">
+      <div class="field-phone-wrapper">
+        <select name="phone-area" class="phone-area">
+          <option value="010">010</option>
+          <option value="011">011</option>
+          <option value="019">019</option>
+        </select>
+        <input type="text" name="phone-number-1" class="phone-number">
+        <input type="text" name="phone-number-2" class="phone-number">
+      </div>
       <label>
         <input type="checkbox" class="checkbox" name="checkbox-accept-sms" value="">
         문자수신 허용
