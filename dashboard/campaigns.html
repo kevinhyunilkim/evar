@@ -1,0 +1,46 @@
+---
+layout: dashboard-default
+---
+
+<section class="campaigns">
+  <header>
+    <h2>캠페인 보기</h2>
+  </header>
+
+  <div class="campaign-list-container">
+    <div class="campaign-item-box new-campaign">
+      <div class="text-container">
+        <a href="javascript:void(0)">
+          <i class="fa fa-plus-circle fa-5x"></i>
+          <h4>새로운 캠페인 추가</h4>
+        </a>
+      </div>
+    </div>
+    {% for campaign in site.data.campaigns %}
+      <div class="campaign-item-box">
+        <img src="{{ campaign.image_url | prepend: site.baseurl }}" alt="" class="campaign-image">
+
+        <div class="campaign-info">
+          <h4>{{ campaign.name }}</h4>
+
+          <aside>
+            <ul>
+              <li>재생수: <b>{{ campaign.played }}</b></li>
+              <li>최종 수정일: {{ campaign.last_modified }}</li>
+            </ul>
+          </aside>
+        </div>
+
+        <div class="campaign-hover-box">
+          <a href="javascript:void(0)" class="view-campaign">캠페인 보기</a>
+
+          <div class="campaign-actions">
+            <a href="javascript:void(0)"><img src="{{ "images/icon-eye-2x.png" | prepend: site.baseurl }}" alt="테스트" title="테스트" width="23px"></a>
+            <a href="javascript:void(0)"><img src="{{ "images/icon-duplicate-2x.png" | prepend: site.baseurl }}" alt="복사" title="복사" width="18px"></a>
+            <a href="javascript:void(0)"><img src="{{ "images/icon-trash-2x.png" | prepend: site.baseurl }}" alt="삭제" title="삭제" width="17px"></a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>

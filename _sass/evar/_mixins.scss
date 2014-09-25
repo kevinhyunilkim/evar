@@ -1,4 +1,5 @@
 $brand-color: $base-accent-color;
+$inner-container-width: 1170px;
 
 @mixin evar-button($base-color: $brand-color, $text-size: 20px, $padding: 15px 45px) {
   background-color: $base-color;
@@ -24,6 +25,6 @@ $brand-color: $base-accent-color;
 
 @mixin inner-container {
   position: relative;
-  width: 1170px;
+  width: $inner-container-width;
   margin: 0 auto;
 }
