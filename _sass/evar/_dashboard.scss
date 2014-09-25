@@ -42,10 +42,13 @@ $dashboard-header-height: 90px;
         padding: 0 25px;
         @include transition(background-color .1s linear, color .1s linear);
 
-        &:hover,
         &.active {
           color: white;
           background-color: $brand-color;
+        }
+
+        &:hover {
+          color: $brand-color;
         }
       }
     }
