@@ -45,6 +45,10 @@ $dashboard-header-height: 90px;
         &.active {
           color: white;
           background-color: $brand-color;
+
+          &:hover {
+            color: white;
+          }
         }
 
         &:hover {
