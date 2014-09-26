@@ -104,7 +104,8 @@ $dashboard-header-height: 90px;
   }
 }
 
-.settings {
+.settings,
+.password-reset {
   @include inner-container;
   padding-left: 15px;
   padding-right: 15px;
@@ -276,6 +277,22 @@ $dashboard-header-height: 90px;
         background-color: white;
         text-align: center;
       }
+    }
+  }
+}
+
+.password-reset {
+  position: relative;
+  width: 550px;
+  margin: 0 auto;
+
+  .form-group {
+    .form-label {
+      @include span-columns(3);
+    }
+
+    .form-field {
+      @include span-columns(9);
     }
   }
 }
