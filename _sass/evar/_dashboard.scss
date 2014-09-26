@@ -698,9 +698,27 @@ $dashboard-header-height: 90px;
       padding: 18px 15px;
 
       &.cancel {
+        background-color: #7f7f7f;
+
+        &:hover {
+          background-color: darken(#7f7f7f, 10%);
+          color: white;
+        }
+      }
+
+      &.primary {
+        background-color: $brand-color;
+
+        &:hover {
+          background-color: darken($brand-color, 10%);
+          color: white;
+        }
+      }
+
+      &.cancel,
+      &.primary {
         @include appearance(none);
         -webkit-font-smoothing: antialiased;
-        background-color: #7f7f7f;
         border-radius: $base-border-radius;
         color: white;
         font-size: $base-font-size;
@@ -713,11 +731,6 @@ $dashboard-header-height: 90px;
         vertical-align: middle;
         white-space: nowrap;
         padding: 18px 15px;
-
-        &:hover {
-          background-color: darken(#7f7f7f, 10%);
-          color: white;
-        }
       }
     }
   }
