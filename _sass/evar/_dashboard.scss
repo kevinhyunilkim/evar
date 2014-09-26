@@ -1,6 +1,7 @@
 // Copyright (c) 2014 Kinda Labs
 
 @import "mixins";
+@import "modal";
 
 $dashboard-header-height: 90px;
 
@@ -69,6 +70,12 @@ $dashboard-header-height: 90px;
         line-height: $dashboard-header-height;
       }
 
+      label {
+        display: inline-block;
+        cursor: pointer;
+        margin: 0;
+      }
+
       .button {
         font-size: 14px;
         font-weight: bold;
@@ -92,6 +99,182 @@ $dashboard-header-height: 90px;
             background-color: darken($brand-color, 15);
           }
         }
+      }
+    }
+  }
+}
+
+.settings {
+  @include inner-container;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 50px;
+  padding-bottom: 100px;
+
+  header {
+    h2 {
+      font-size: 24px;
+    }
+  }
+
+  .form-buttons {
+    padding: 10px 0;
+    text-align: center;
+
+    .button {
+      padding: 18px 15px;
+      min-width: 230px;
+
+      &.cancel {
+        @include appearance(none);
+        -webkit-font-smoothing: antialiased;
+        background-color: #7f7f7f;
+        border-radius: $base-border-radius;
+        color: white;
+        display: inline-block;
+        font-size: $base-font-size;
+        font-weight: bold;
+        line-height: 1;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        user-select: none;
+        vertical-align: middle;
+        white-space: nowrap;
+        padding: 18px 15px;
+        min-width: 230px;
+        margin-right: 5px;
+
+        &:hover {
+          background-color: darken(#7f7f7f, 10%);
+          color: white;
+        }
+      }
+    }
+  }
+
+  .form-group {
+    @include clearfix;
+    margin-bottom: 15px;
+
+    .form-label {
+      @include span-columns(3);
+
+      label {
+        margin: 0;
+        line-height: 37px;
+      }
+    }
+
+    .form-field {
+      @include span-columns(6);
+
+      .modal {
+        label {
+          margin: 0;
+          display: inline-block;
+        }
+      }
+
+      textarea,
+      #{$all-text-inputs},
+      select[multiple=multiple] {
+        margin: 0;
+      }
+
+      &.point-field {
+        .static-text {
+          margin-right: 15px;
+          font-weight: bold;
+        }
+
+        label {
+          display: inline-block;
+          margin: 0;
+          cursor: pointer;
+        }
+      }
+
+      .help-block {
+        margin: 10px 0 0 0;
+        font-size: 14px;
+        color: #666;
+      }
+
+      .button {
+        font-size: 14px;
+        font-weight: bold;
+        padding: 8px 20px;
+        border-radius: 3px;
+        color: white;
+        background-color: #999;
+        text-transform: uppercase;
+        display: inline-block;
+        @include transition(background-color .1s linear);
+
+        &:hover {
+          background-color: darken(#999, 15);
+        }
+
+        &.primary {
+          color: white;
+          background-color: $brand-color;
+          margin-right: 4px;
+
+          &:hover {
+            background-color: darken($brand-color, 15);
+          }
+        }
+      }
+
+      .static-text {
+        margin: 0;
+        line-height: 37px;
+        display: inline-block;
+        color: #666;
+        font-weight: bold;
+      }
+
+      .field-phone-wrapper {
+        .phone-area {
+          display: inline-block;
+          border: 1px solid $form-border-color;
+          height: 37px;
+          margin-bottom: 0;
+          vertical-align: top;
+        }
+
+        .phone-number {
+          display: inline-block;
+          width: 120px;
+        }
+      }
+
+      label {
+        font-size: 14px;
+        margin-top: 10px;
+        margin-bottom: 0;
+        color: #666;
+      }
+    }
+  }
+
+  .point-history-table {
+    border: 1px solid darken(#e9e9e9, 5);
+    font-size: 14px;
+
+    thead {
+      th {
+        background-color: #e9e9e9;
+        text-align: center;
+        border-bottom: 1px solid darken(#e9e9e9, 5);
+      }
+    }
+
+    tbody {
+      td {
+        background-color: white;
+        text-align: center;
       }
     }
   }
@@ -127,28 +310,33 @@ $dashboard-header-height: 90px;
       &.new-campaign {
         background-color: #ddd;
 
+        .modal-inner {
+          width: 600px;
+        }
+
         .text-container {
           display: table;
           width: 100%;
           height: 100%;
 
-          a {
+          .text {
             display: table-cell;
             vertical-align: middle;
             text-align: center;
+            cursor: pointer;
 
             h4 {
               font-size: 18px;
               color: #999;
-              @include transition(color .1s linear);
+              @include transition(color .2s linear);
             }
 
             .fa {
               display: block;
               margin-bottom: 10px;
               color: #f4f4f4;
-              text-shadow: 0px 0px 10px rgba(0,0,0,.1);
-              @include transition(color .1s linear);
+              text-shadow: 0px 0px 0px rgba(0,0,0,.1);
+              @include transition(color .2s linear, text-shadow .2s linear);
             }
 
             &:hover {
@@ -158,6 +346,7 @@ $dashboard-header-height: 90px;
 
               .fa {
                 color: white;
+                text-shadow: 0px 0px 10px rgba(0,0,0,.1);
               }
             }
           }
@@ -247,6 +436,203 @@ $dashboard-header-height: 90px;
         aside {
           margin-top: 5px;
           font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+.modal {
+  .choose-campaign-type {
+    @include clearfix;
+
+    li {
+      @include span-columns(6);
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    .campaign-type-icon {
+      background-color: #f5f5f5;
+      text-align: center;
+      padding-top: 40px;
+      padding-bottom: 40px;
+
+      img {
+        vertical-align: middle;
+      }
+    }
+
+    p {
+      font-size: 14px;
+      color: #666;
+      margin-top: 15px;
+      margin-bottom: 25px;
+    }
+
+    .button {
+      display: block;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 12px 20px;
+      border-radius: 3px;
+      color: white;
+      background-color: $brand-color;
+      text-transform: uppercase;
+      text-align: center;
+      @include transition(background-color .1s linear);
+
+      &:hover {
+        background-color: darken($brand-color, 15);
+      }
+    }
+  }
+}
+
+.opt-out-field {
+  .modal {
+    .modal-inner {
+      width: 380px;
+    }
+
+    .modal-body {
+      p {
+        font-size: 14px;
+        color: #666;
+        margin: 0;
+      }
+    }
+
+    .modal-footer {
+      text-align: right;
+
+      .button {
+        font-size: 14px;
+        font-weight: bold;
+        padding: 8px 20px;
+        border-radius: 3px;
+        color: white;
+        background-color: #999;
+        text-transform: uppercase;
+        display: inline-block;
+        min-width: 80px;
+        text-align: center;
+        @include transition(background-color .1s linear);
+
+        &:hover {
+          background-color: darken(#999, 15);
+        }
+
+        &.primary {
+          color: white;
+          background-color: $brand-color;
+          margin-right: 4px;
+
+          &:hover {
+            background-color: darken($brand-color, 15);
+          }
+        }
+
+        &.danger {
+          color: white;
+          background-color: #f05f5c;
+          margin-right: 4px;
+
+          &:hover {
+            background-color: #cc504e;
+          }
+        }
+      }
+    }
+  }
+}
+
+.purchase-package-modal {
+  .modal-inner {
+    width: 1000px;
+  }
+
+  .modal-body {
+    > h2 {
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    > p {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      margin-top: 5px;
+      margin-bottom: 30px;
+    }
+
+    ul {
+      @include clearfix;
+
+      li {
+        @include span-columns(3);
+
+        h3 {
+          color: #fff;
+          font-size: 22px;
+          text-align: center;
+          background-color: $brand-color;
+          padding: 15px 0;
+          @include border-top-radius(3px);
+        }
+
+        .pricing-point {
+          background-color: #f4f4f4;
+          text-align: center;
+          min-height: 250px;
+          position: relative;
+          padding: 20px 20px 0;
+          @include border-bottom-radius(3px);
+
+          h1 {
+            font-size: 50px;
+            color: #333;
+          }
+
+          p {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 0;
+
+            .highlight {
+              font-weight: bold;
+              color: $brand-color;
+            }
+          }
+
+          .side-text {
+            font-size: 13px;
+            color: #666;
+          }
+
+          .button {
+            background-color: #333;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 15px 0;
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 20px;
+            margin-left: 20px;
+            margin-right: 20px;
+            border-radius: 3px;
+            line-height: 1;
+            @include transition(background-color .1s linear);
+
+            &:hover,
+            &:focus {
+              background-color: lighten(#333, 10%);
+            }
+          }
         }
       }
     }

@@ -9,11 +9,23 @@ layout: dashboard-default
 
   <div class="campaign-list-container">
     <div class="campaign-item-box new-campaign">
-      <div class="text-container">
-        <a href="javascript:void(0)">
+      <div class="text-container modal">
+        <label for="new-campaign" class="text">
           <i class="fa fa-plus-circle fa-5x"></i>
           <h4>새로운 캠페인 추가</h4>
-        </a>
+        </label>
+        <input class="modal-state" id="new-campaign" type="checkbox">
+        <div class="modal-window">
+          <div class="modal-inner">
+            <div class="modal-header">
+              <label class="modal-close" for="new-campaign"></label>
+              <h4>캠페인 유형 선택</h4>
+            </div>
+            <div class="modal-body">
+              {% include dashboard/modal-new-campaign.html %}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     {% for campaign in site.data.campaigns %}
@@ -44,3 +56,4 @@ layout: dashboard-default
     {% endfor %}
   </div>
 </section>
+

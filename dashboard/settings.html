@@ -2,3 +2,201 @@
 layout: dashboard-default
 ---
 
+<section class="settings">
+  <header>
+    <h2>회원정보수정</h2>
+  </header>
+
+  <hr>
+
+  <form onsubmit="return false">
+    <div class="form-group">
+      <div class="form-label">
+        <label for="field-name">이름</label>
+      </div>
+      <div class="form-field">
+        <p class="static-text">홍성철</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-label">
+        <label for="field-change-password">비밀번호</label>
+      </div>
+      <div class="form-field">
+        <a href="javascript:void(0)" class="button">변경</a>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-label">
+        <label for="field-email">이메일</label>
+      </div>
+      <div class="form-field">
+        <input type="email" name="field-email" id="field-email" value="sc@evar.co.kr">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-label">
+        <label for="field-phone">휴대전화번호</label>
+      </div>
+      <div class="form-field">
+        <div class="field-phone-wrapper">
+          <select name="phone-area" class="phone-area">
+            <option value="010">010</option>
+            <option value="011">011</option>
+            <option value="016">016</option>
+            <option value="017">017</option>
+            <option value="018">018</option>
+            <option value="019">019</option>
+          </select>
+          <input type="text" name="phone-number-1" class="phone-number" maxlength="4">
+          <input type="text" name="phone-number-2" class="phone-number" maxlength="4">
+        </div>
+        <label>
+          <input type="checkbox" class="checkbox" name="checkbox-accept-sms" value="">
+          문자수신 허용
+        </label>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="form-group">
+      <div class="form-label">
+        <label for="field-opt-out">탈퇴</label>
+      </div>
+      <div class="form-field opt-out-field">
+        <div class="text-container modal">
+          <label for="opt-out">
+            <span class="button">탈퇴하기</span>
+          </label>
+          <input class="modal-state" id="opt-out" type="checkbox">
+          <div class="modal-window">
+            <div class="modal-inner">
+              <div class="modal-header">
+                <label class="modal-close" for="opt-out"></label>
+                <h4>회원 탈퇴</h4>
+              </div>
+              <div class="modal-body">
+                <p>회원 탈퇴시 회원정보 및 포인트는 복구할 수 없습니다. 회원 탈퇴 하시겠습니까?</p>
+              </div>
+              <div class="modal-footer">
+                <a href="javascript:void(0)" class="button danger">예</a>
+                <label for="opt-out">
+                  <span class="button">아니오</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="help-block">회원 탈퇴 시 소멸되는 정보 및 포인트는 복구할 수 없습니다.</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="form-group">
+      <div class="form-label">
+        <label for="field-point">보유 포인트</label>
+      </div>
+      <div class="form-field point-field">
+        <p class="static-text">15,000 Point</p>
+        <label for="purchase-package">
+          <span class="button primary">충전하기</span>
+        </label>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="form-group">
+      <div class="form-label">
+        <label for="field-point-history">포인트 내역</label>
+      </div>
+    </div>
+    <table class="point-history-table">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>일자</th>
+          <th>포인트</th>
+          <th>내역</th>
+          <th>거래번호</th>
+          <th>금액</th>
+          <th>결제방식</th>
+          <th>결제일자</th>
+          <th>적용여부</th>
+          <th>상세내역</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>5</td>
+          <td>2014-07-19</td>
+          <td>1000</td>
+          <td>충전</td>
+          <td>s201409180003</td>
+          <td>5,000원</td>
+          <td>신용카드</td>
+          <td>2014-09-18 22:09:03</td>
+          <td>적용</td>
+          <td><a href="javascript:void(0)">보기</a></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>2014-07-09</td>
+          <td>1000</td>
+          <td>충전</td>
+          <td>s201409180003</td>
+          <td>5,000원</td>
+          <td>신용카드</td>
+          <td>2014-09-18 22:09:03</td>
+          <td>적용</td>
+          <td><a href="javascript:void(0)">보기</a></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>2014-07-09</td>
+          <td>1000</td>
+          <td>충전</td>
+          <td>s201409180003</td>
+          <td>5,000원</td>
+          <td>신용카드</td>
+          <td>2014-09-18 22:09:03</td>
+          <td>적용</td>
+          <td><a href="javascript:void(0)">보기</a></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>2014-07-09</td>
+          <td>1000</td>
+          <td>충전</td>
+          <td>s201409180003</td>
+          <td>5,000원</td>
+          <td>신용카드</td>
+          <td>2014-09-18 22:09:03</td>
+          <td>적용</td>
+          <td><a href="javascript:void(0)">보기</a></td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2014-07-09</td>
+          <td>1000</td>
+          <td>충전</td>
+          <td>s201409180003</td>
+          <td>5,000원</td>
+          <td>신용카드</td>
+          <td>2014-09-18 22:09:03</td>
+          <td>적용</td>
+          <td><a href="javascript:void(0)">보기</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr>
+
+    <div class="form-buttons">
+      <a href="javascript:void(0)" class="button cancel">취소</a>
+      <input type="submit" value="수정" class="button">
+    </div>
+  </form>
+</section>
