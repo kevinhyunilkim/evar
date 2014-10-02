@@ -2,6 +2,7 @@
 
 @import "mixins";
 @import "modal";
+@import "date-picker";
 
 $dashboard-header-height: 90px;
 
@@ -105,7 +106,8 @@ $dashboard-header-height: 90px;
 }
 
 .settings,
-.password-reset {
+.password-reset,
+.statistics {
   @include inner-container;
   padding-left: 15px;
   padding-right: 15px;
@@ -117,7 +119,10 @@ $dashboard-header-height: 90px;
       font-size: 24px;
     }
   }
+}
 
+.settings,
+.password-reset {
   .form-buttons {
     padding: 10px 0;
     text-align: center;
@@ -810,4 +815,172 @@ $dashboard-header-height: 90px;
 .settings .pagination {
   margin-top: 30px;
   margin-bottom: 30px;
+}
+
+.statistics {
+  header {
+    position: relative;
+  }
+
+  .search-form {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    input[type=submit] {
+      font-size: 14px;
+    }
+
+    .date-picker {
+      $date-picker-border-color: $base-border-color;
+      $date-picker-border: 1px solid $date-picker-border-color;
+      $date-picker-background: lighten($date-picker-border-color, 10);
+
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+
+      input {
+        @include box-sizing(border-box);
+        display: block;
+      }
+
+      div.date-picker-with-icon {
+        position: relative;
+
+        input[type=text] {
+          @include appearance(none);
+          padding: .68em .68em;
+          font-size: 14px;
+          border-radius: $base-border-radius;
+          margin: 0;
+          width: 150px;
+          padding-right: 37px;
+        }
+
+        img {
+          cursor: pointer;
+          height: 37px;
+          position: absolute;
+          top: 0;
+          right: 0;
+          opacity: .5;
+          @include transition(opacity .2s linear);
+
+          &:hover {
+            opacity: .7;
+          }
+        }
+      }
+    }
+  }
+
+  .button-group {
+    $button-group-background: $base-background-color;
+    $button-group-color: lighten($base-font-color, 30);
+    $button-group-border: 1px solid #ddd;
+    $button-group-inner-border: 1px solid #ddd;//lighten(#ddd, 18);
+    $button-group-background-checked: $base-accent-color;
+    $button-group-color-checked: white;
+    $button-group-border-checked: darken($button-group-background-checked, 15);
+    @include clearfix;
+    display: inline-block;
+    vertical-align: middle;
+
+    input {
+      display: none;
+    }
+
+    label {
+      margin-bottom: 0;
+      float: left;
+
+      .button-group-item {
+        background: $button-group-background;
+        border-radius: 0;
+        color: $button-group-color;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 1;
+        padding: .75em 1em;
+        border-bottom: $button-group-border;
+        border-left: 0;
+        border-right: $button-group-inner-border;
+        border-top: $button-group-border;
+        width: auto;
+
+        &:hover {
+          background-color: darken($button-group-background, 3);
+        }
+      }
+
+      &:first-child .button-group-item {
+        border-top-left-radius: $base-border-radius;
+        border-top-right-radius: 0;
+        border-top: $button-group-border;
+        border-left: $button-group-border;
+        border-bottom-left-radius: $base-border-radius;
+      }
+
+      &:last-child .button-group-item {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: $base-border-radius;
+        border-right: $button-group-border;
+        border-top-right-radius: $base-border-radius;
+      }
+
+      input:checked + .button-group-item {
+        background: $button-group-background-checked;
+        border: 1px solid $button-group-border-checked;
+        box-shadow: inset 0 1px 2px darken($button-group-background-checked, 10);
+        color: $button-group-color-checked;
+      }
+    }
+  }
+}
+
+.statistics {
+  .statistics-table {
+    border: 1px solid darken(#e9e9e9, 5);
+    font-size: 14px;
+
+    thead {
+      th {
+        background-color: #e9e9e9;
+        text-align: center;
+        border: 1px solid darken(#e9e9e9, 5);
+      }
+    }
+
+    tbody {
+      tr.stat-row:hover {
+        td {
+          background-color: #eee;
+
+          &:hover {
+            background-color: darken(#eee, 5);
+          }
+        }
+      }
+
+      td {
+        background-color: white;
+        text-align: center;
+        border: 1px solid #ddd;
+        @include transition(background-color .2s linear);
+
+        &.stat-title {
+          text-align: left;
+          font-weight: bold;
+          padding-left: 15px;
+        }
+
+        &.stat-total {
+          font-weight: bold;
+        }
+      }
+    }
+  }
 }

@@ -10,7 +10,7 @@ layout: dashboard-default
       <form action="" id="statForm" name="statForm" method="POST">
         <div class="button-group">
           <label>
-            <input type="radio" name="searchCondition" value="1" checked>
+            <input type="radio" name="searchCondition" value="1">
             <span class="button-group-item">Monthly</span>
           </label>
           <label>
@@ -18,7 +18,7 @@ layout: dashboard-default
             <span class="button-group-item">Daily</span>
           </label>
           <label>
-            <input type="radio" name="searchCondition" value="3">
+            <input type="radio" name="searchCondition" value="3" checked>
             <span class="button-group-item">Hourly</span>
           </label>
         </div>
@@ -36,36 +36,48 @@ layout: dashboard-default
 
   <hr>
 
-  <h6>2014 월별 통계</h6>
+  <h6>2014-10-02 시간대별 통계</h6>
 
   <table class="statistics-table">
     <thead>
       <tr>
-        <th>1월</th>
-        <th>2월</th>
-        <th>3월</th>
-        <th>4월</th>
-        <th>5월</th>
-        <th>6월</th>
-        <th>7월</th>
-        <th>8월</th>
-        <th>9월</th>
-        <th>10월</th>
-        <th>11월</th>
-        <th>12월</th>
+        <th>1시</th>
+        <th>2시</th>
+        <th>3시</th>
+        <th>4시</th>
+        <th>5시</th>
+        <th>6시</th>
+        <th>7시</th>
+        <th>8시</th>
+        <th>9시</th>
+        <th>10시</th>
+        <th>11시</th>
+        <th>12시</th>
+        <th>13시</th>
+        <th>14시</th>
+        <th>15시</th>
+        <th>16시</th>
+        <th>17시</th>
+        <th>18시</th>
+        <th>19시</th>
+        <th>20시</th>
+        <th>21시</th>
+        <th>22시</th>
+        <th>23시</th>
+        <th>24시</th>
         <th>합계</th>
       </tr>
     </thead>
     <tbody>
       {% for stat in site.data.statistics %}
         <tr>
-          <td colspan="13" class="stat-title"><a href="javascript:void(0)">{{stat.name}}</a></td>
+          <td colspan="25" class="stat-title"><a href="javascript:void(0)">{{stat.name}}</a></td>
         </tr>
         <tr class="stat-row">
-          {% for month in stat.months %}
-            <td>{{month.value}}</td>
+          {% for hour in stat.hours %}
+            <td>{{hour.value}}</td>
           {% endfor %}
-          <td class="stat-total">{{stat.month_total}}</td>
+          <td class="stat-total">{{stat.hour_total}}</td>
         </tr>
       {% endfor %}
     </tbody>

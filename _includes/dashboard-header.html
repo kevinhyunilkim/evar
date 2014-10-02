@@ -6,7 +6,7 @@
 
     <nav>
       <a href="{{ "dashboard-campaigns.html" | prepend: site.baseurl }}" class="{% if page.path == "dashboard-campaigns.html" %}active{% endif %}">캠페인</a>
-      <a href="{{ "dashboard-statistics.html" | prepend: site.baseurl }}" class="{% if page.path == "dashboard-statistics.html" %}active{% endif %}">통계</a>
+      <a href="{{ "dashboard-statistics.html" | prepend: site.baseurl }}" class="{% if page.path == "dashboard-statistics.html" %}active{% elsif page.path == "dashboard-statistics-daily.html" %}active{% elsif page.path == "dashboard-statistics-hourly.html" %}active{% endif %}">통계</a>
       <a href="{{ "dashboard-settings.html" | prepend: site.baseurl }}" class="{% if page.path == "dashboard-settings.html" %}active{% endif %}">마이페이지</a>
     </nav>
 

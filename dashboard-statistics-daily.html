@@ -10,11 +10,11 @@ layout: dashboard-default
       <form action="" id="statForm" name="statForm" method="POST">
         <div class="button-group">
           <label>
-            <input type="radio" name="searchCondition" value="1" checked>
+            <input type="radio" name="searchCondition" value="1">
             <span class="button-group-item">Monthly</span>
           </label>
           <label>
-            <input type="radio" name="searchCondition" value="2">
+            <input type="radio" name="searchCondition" value="2" checked>
             <span class="button-group-item">Daily</span>
           </label>
           <label>
@@ -36,36 +36,55 @@ layout: dashboard-default
 
   <hr>
 
-  <h6>2014 월별 통계</h6>
+  <h6>2014-10 일별 통계</h6>
 
   <table class="statistics-table">
     <thead>
       <tr>
-        <th>1월</th>
-        <th>2월</th>
-        <th>3월</th>
-        <th>4월</th>
-        <th>5월</th>
-        <th>6월</th>
-        <th>7월</th>
-        <th>8월</th>
-        <th>9월</th>
-        <th>10월</th>
-        <th>11월</th>
-        <th>12월</th>
+        <th>1일</th>
+        <th>2일</th>
+        <th>3일</th>
+        <th>4일</th>
+        <th>5일</th>
+        <th>6일</th>
+        <th>7일</th>
+        <th>8일</th>
+        <th>9일</th>
+        <th>10일</th>
+        <th>11일</th>
+        <th>12일</th>
+        <th>13일</th>
+        <th>14일</th>
+        <th>15일</th>
+        <th>16일</th>
+        <th>17일</th>
+        <th>18일</th>
+        <th>19일</th>
+        <th>20일</th>
+        <th>21일</th>
+        <th>22일</th>
+        <th>23일</th>
+        <th>24일</th>
+        <th>25일</th>
+        <th>26일</th>
+        <th>27일</th>
+        <th>28일</th>
+        <th>29일</th>
+        <th>30일</th>
+        <th>31일</th>
         <th>합계</th>
       </tr>
     </thead>
     <tbody>
       {% for stat in site.data.statistics %}
         <tr>
-          <td colspan="13" class="stat-title"><a href="javascript:void(0)">{{stat.name}}</a></td>
+          <td colspan="32" class="stat-title"><a href="javascript:void(0)">{{stat.name}}</a></td>
         </tr>
         <tr class="stat-row">
-          {% for month in stat.months %}
-            <td>{{month.value}}</td>
+          {% for day in stat.days %}
+            <td>{{day.value}}</td>
           {% endfor %}
-          <td class="stat-total">{{stat.month_total}}</td>
+          <td class="stat-total">{{stat.day_total}}</td>
         </tr>
       {% endfor %}
     </tbody>
