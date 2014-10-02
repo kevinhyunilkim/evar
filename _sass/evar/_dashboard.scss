@@ -752,3 +752,62 @@ $dashboard-header-height: 90px;
     }
   }
 }
+
+.pagination {
+  $pagination-border-color: $base-border-color;
+  $pagination-border: 1px solid $pagination-border-color;
+  $pagination-background: lighten($pagination-border-color, 10);
+  $pagination-hover-background: lighten($pagination-background, 5);
+  $pagination-color: $base-font-color;
+
+  text-align: center;
+
+  ul {
+    display: inline;
+    text-align: center;
+
+    li {
+      display: inline;
+
+      a {
+        @include transition(all .2s ease-in-out);
+        background: $pagination-background;
+        border-radius: $base-border-radius;
+        border: $pagination-border;
+        color: $pagination-color;
+        padding: $gutter/4 $gutter/2;
+        font-size: 14px;
+
+        &.active {
+          border: $brand-color;
+          background-color: $brand-color;
+          color: white;
+          font-weight: bold;
+
+          &:hover,
+          &:focus,
+          &:active {
+            border: $brand-color;
+            background-color: $brand-color;
+            color: white;
+          }
+        }
+
+        &:hover,
+        &:focus {
+          background: $pagination-hover-background;
+          color: $base-link-color;
+        }
+
+        &:active {
+          background: $pagination-background;
+        }
+      }
+    }
+  }
+}
+
+.settings .pagination {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
