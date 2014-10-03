@@ -129,6 +129,8 @@ $builder-header-height: 90px;
     z-index: 1;
     background-color: #eee;
     box-shadow: 0 0 3px 0 rgba(0,0,0,.15);
+    overflow-y: auto;
+    overflow-x: hidden;
 
     .accordion {
       .js-accordion-trigger {
@@ -168,6 +170,8 @@ $builder-header-height: 90px;
     background-color: #eee;
     box-shadow: 0 0 3px 0 rgba(0,0,0,.15);
     padding: .9em;
+    overflow-y: auto;
+    overflow-x: hidden;
 
     .upload-content-wrapper {
       padding-bottom: 1.5em;
@@ -184,7 +188,7 @@ $builder-header-height: 90px;
       .upload-content-button {
         background-color: #d3d3d3;
         padding-top: 20px;
-        padding-bottom: 50px;
+        padding-bottom: 45px;
         text-align: center;
         cursor: pointer;
         position: relative;
