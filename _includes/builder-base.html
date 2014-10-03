@@ -130,7 +130,11 @@
     $('.js-accordion-trigger').bind('click', function(e) {
       var parent = $(this).parent();
 
-      if (!parent.hasClass('is-expanded')) {
+      e.preventDefault();
+
+      if (parent.hasClass('is-expanded')) {
+        return false;
+      } else {
         var accordion = $(this).closest('.accordion');
         accordion.find('.is-expanded').toggleClass('is-expanded');
         accordion.find('.submenu:visible').slideToggle('fast');
@@ -138,8 +142,6 @@
 
       parent.find('.submenu').slideToggle('fast');
       parent.toggleClass('is-expanded');
-
-      e.preventDefault();
     });
   });
 </script>
