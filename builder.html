@@ -48,26 +48,80 @@ layout: builder-default
   </div>
   <div id="aside">
     <div class="upload-content-wrapper">
-      <h5>스캔 이미지</h5>
+      <h5 class="upload-content-title">스캔 이미지</h5>
 
       <hr>
 
-      <div class="upload-content-button">
-        <img src="{{ "images/builder/icon-image.png" | prepend: site.baseurl }}" alt="" width="80px">
+      <div class="upload-scan-image modal">
+        <label class="upload-content-button" for="upload-scan-image">
+          <img src="{{ "images/builder/icon-image.png" | prepend: site.baseurl }}" alt="" width="80px">
 
-        <a href="javascript:void(0)"><i class="fa fa-plus"></i>&nbsp;&nbsp;사진 업로드</a>
+          <span><i class="fa fa-plus"></i>&nbsp;&nbsp;사진 업로드</span>
+        </label>
+        <input class="modal-state" id="upload-scan-image" type="checkbox">
+        <div class="modal-window">
+          <div class="modal-inner">
+            <div class="modal-header">
+              <label class="modal-close" for="upload-scan-image"></label>
+              <h4>이미지 업로드</h4>
+            </div>
+            <div class="modal-body">
+              {% include modal/upload-scan-image.html %}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="upload-content-wrapper">
-      <h5>캠페인 동영상</h5>
+      <h5 class="upload-content-title">슬라이드 이미지</h5>
 
       <hr>
 
-      <div class="upload-content-button">
-        <img src="{{ "images/builder/icon-image.png" | prepend: site.baseurl }}" alt="" width="80px">
+      <div class="upload-slide-image modal">
+        <label class="upload-content-button" for="upload-slide-image">
+          <img src="{{ "images/builder/icon-image.png" | prepend: site.baseurl }}" alt="" width="80px">
 
-        <a href="javascript:void(0)"><i class="fa fa-plus"></i>&nbsp;&nbsp;동영상 업로드</a>
+          <span><i class="fa fa-plus"></i>&nbsp;&nbsp;사진 업로드</span>
+        </label>
+        <input class="modal-state" id="upload-slide-image" type="checkbox">
+        <div class="modal-window">
+          <div class="modal-inner">
+            <div class="modal-header">
+              <label class="modal-close" for="upload-slide-image"></label>
+              <h4>이미지 업로드</h4>
+            </div>
+            <div class="modal-body">
+              {% include modal/upload-slide-image.html %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="upload-content-wrapper">
+      <h5 class="upload-content-title">캠페인 동영상</h5>
+
+      <hr>
+
+      <div class="upload-video modal">
+        <label class="upload-content-button" for="upload-video">
+          <img src="{{ "images/builder/icon-image.png" | prepend: site.baseurl }}" alt="" width="80px">
+
+          <span><i class="fa fa-plus"></i>&nbsp;&nbsp;동영상 업로드</span>
+        </label>
+        <input class="modal-state" id="upload-video" type="checkbox">
+        <div class="modal-window">
+          <div class="modal-inner">
+            <div class="modal-header">
+              <label class="modal-close" for="upload-video"></label>
+              <h4>동영상 업로드</h4>
+            </div>
+            <div class="modal-body">
+              {% include modal/upload-video.html %}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

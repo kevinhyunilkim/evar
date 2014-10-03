@@ -176,7 +176,7 @@ $builder-header-height: 90px;
     .upload-content-wrapper {
       padding-bottom: 1.5em;
 
-      h5 {
+      .upload-content-title {
         font-size: 14px;
         color: #666;
       }
@@ -186,6 +186,7 @@ $builder-header-height: 90px;
       }
 
       .upload-content-button {
+        margin: 0;
         background-color: #d3d3d3;
         padding-top: 20px;
         padding-bottom: 45px;
@@ -193,7 +194,7 @@ $builder-header-height: 90px;
         cursor: pointer;
         position: relative;
 
-        a {
+        span {
           position: absolute;
           left: 0;
           bottom: 0;
@@ -213,10 +214,28 @@ $builder-header-height: 90px;
         }
 
         &:hover {
-          a {
+          span {
             background-color: darken(#666, 10);
           }
         }
+      }
+    }
+
+    .upload-scan-image.modal {
+      .modal-inner {
+        width: 470px;
+      }
+    }
+
+    .upload-slide-image.modal {
+      .modal-inner {
+        width: 470px;
+      }
+    }
+
+    .upload-video.modal {
+      .modal-inner {
+        width: 470px;
       }
     }
   }
@@ -255,4 +274,60 @@ $builder-header-height: 90px;
 
 .checkboard {
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACdJREFUeNpi3Lx5MwMqUFJSQhNhYiACDEZFLJh+uXfv3nDxHUCAAQDF6AWZdZxKKAAAAABJRU5ErkJggg==);
+}
+
+.modal {
+  &.upload-scan-image,
+  &.upload-slide-image,
+  &.upload-video {
+    .modal-body {
+      text-align: center;
+
+      .select-options {
+        label {
+          display: inline-block;
+          color: #666;
+          margin: 0 20px;
+        }
+      }
+
+      h5 {
+        font-size: 18px;
+        font-weight: bold;
+        color: #666;
+      }
+
+      p {
+        font-size: 14px;
+        color: #666;
+        margin-top: 5px;
+        margin-bottom: 25px;
+      }
+
+      .button {
+        width: 50%;
+        margin: 25px auto 0 auto;
+        display: block;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 12px 20px;
+        border-radius: 3px;
+        color: white;
+        background-color: $brand-color;
+        text-transform: uppercase;
+        text-align: center;
+        @include transition(background-color .1s linear);
+
+        &:hover {
+          background-color: darken($brand-color, 15);
+        }
+
+        .fa {
+          vertical-align: middle;
+          margin-right: 10px;
+          font-size: 1.5em;
+        }
+      }
+    }
+  }
 }
