@@ -1,0 +1,65 @@
+---
+layout: builder-default
+---
+
+{% include builder-base.html %}
+
+<div class="widget-modal widget-with-campaign-options modal">
+  <input class="modal-state" id="widget-with-campaign-options" type="checkbox" checked>
+  <div class="modal-window">
+    <div class="modal-inner">
+      <div class="modal-header">
+        <label class="modal-close" for="widget-with-campaign-options"></label>
+        <h4>위젯 속성</h4>
+      </div>
+      <div class="modal-body">
+        <form action="" onsubmit="return false">
+          <div class="form-group">
+            <div class="form-label">
+              <label>타입</label>
+            </div>
+            <div class="form-field">
+              <input type="text" placeholder="내 캠페인">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-label">
+              <label>위젯옵션</label>
+            </div>
+            <div class="form-field">
+              <label class="sm"><input type="radio" name="widgetOption" value="basic"> 처음부터 화면에 위젯을 보여준다.</label>
+              <label class="sm one-lh"><input type="radio" name="widgetOption" value="custom"> 동영상 재생이 끝난 후 화면에 위젯을 보여준다.</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-label">
+              <label>최대재생</label>
+            </div>
+            <div class="form-field">
+              <div class="input-with-help-text">
+                <div class="input-with-text">
+                  <input type="text" placeholder="">
+                  <span>회</span>
+                </div>
+                <span>현재 <b>256</b>회 재생, 남은 재생횟수 <b>144</b>회</span>
+              </div>
+              <label class="sm"><input type="checkbox" name="playLimit"> 최대 재생 횟수에 도달하면 더 이상 캠페인을 실행하지 않습니다.</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-label">
+              <label>지우기</label>
+            </div>
+            <div class="form-field">
+              <a href="javascript:void(0)" class="static-text static-link sm">캠페인을 삭제하겠습니다.</a>
+            </div>
+          </div>
+          <div class="form-buttons">
+            <label for="widget-with-campaign-options" class="button cancel">취소</label>
+            <input type="submit" value="확인" class="button">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

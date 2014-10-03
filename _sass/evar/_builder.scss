@@ -331,3 +331,139 @@ $builder-header-height: 90px;
     }
   }
 }
+
+.widget-modal {
+  .modal-inner {
+    width: 470px;
+  }
+
+  .modal-body {
+    color: #666;
+
+    .form-group {
+      margin-bottom: 20px;
+
+      @include clearfix;
+
+      .form-label {
+        @include span-columns(3);
+
+        label {
+          line-height: 37px;
+        }
+      }
+
+      .form-field {
+        @include span-columns(9);
+
+        textarea,
+        #{$all-text-inputs},
+        select[multiple=multiple] {
+          margin-bottom: 0;
+        }
+
+        label {
+          line-height: 37px;
+          margin-right: 30px;
+          display: inline-block;
+        }
+
+        input[type=file] {
+          margin-bottom: 0;
+          padding-top: 0.5em;
+        }
+
+        input[type=checkbox] {
+          display: inline;
+        }
+
+        .static-text {
+          line-height: 37px;
+        }
+
+        .static-link {
+          font-weight: bold;
+        }
+
+        .sm {
+          font-size: 14px;
+        }
+
+        .one-lh {
+          line-height: 1;
+        }
+
+        .input-with-help-text {
+          .input-with-text {
+            width: 100px;
+            display: inline-block;
+            position: relative;
+
+            input {
+              padding-right: 1.5em;
+            }
+
+            span {
+              position: absolute;
+              top: 0;
+              right: 0;
+              line-height: 37px;
+              margin-right: 0.5em;
+              color: #999;
+            }
+          }
+
+          span {
+            margin-left: 10px;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    .form-buttons {
+      text-align: center;
+      margin-top: 40px;
+
+      .button {
+        @extend %button;
+        @include appearance(none);
+        border: none;
+        cursor: pointer;
+        user-select: none;
+        vertical-align: middle;
+        white-space: nowrap;
+        width: 30%;
+        font-size: 18px;
+        padding-top: .9em;
+        padding-bottom: .9em;
+
+        &.cancel {
+          background-color: #999;
+
+          &:hover {
+            background-color: darken(#999, 15);
+          }
+        }
+      }
+    }
+  }
+
+  &.widget-with-campaign-options {
+    .modal-inner {
+      width: 650px;
+    }
+
+    .modal-body {
+      .form-group {
+        .form-label {
+          @include span-columns(2);
+        }
+
+        .form-field {
+          @include span-columns(10);
+        }
+      }
+    }
+  }
+}

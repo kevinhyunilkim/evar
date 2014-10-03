@@ -1,0 +1,24 @@
+---
+layout: builder-default
+---
+
+{% include builder-base.html %}
+
+<div class="widget-modal widget-modal-scan-image modal">
+  <input class="modal-state" id="widget-modal-scan-image" type="checkbox" checked>
+  <div class="modal-window">
+    <div class="modal-inner">
+      <div class="modal-header">
+        <label class="modal-close" for="widget-modal-scan-image"></label>
+        <h4>에바 앱으로 이미지를 스캔해보세요</h4>
+      </div>
+      <div class="modal-body">
+        <img src="{{ "images/builder/sample-scan-image.jpg" | prepend: site.baseurl }}" alt="">
+
+        <div class="form-buttons">
+          <label for="widget-modal-scan-image" class="button">확인</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
