@@ -1,0 +1,122 @@
+<main id="main-container">
+  <div class="mask checkboard"></div>
+
+  <div id="aside-nav">
+    <ul class="accordion">
+      <li>
+        <a href="javascript:void(0)" class="js-accordion-trigger">기본</a>
+        <ul class="submenu">
+          <li><a href="javascript:void(0)">Sub Item 1</a></li>
+          <li><a href="javascript:void(0)">Sub Item 2</a></li>
+          <li><a href="javascript:void(0)">Sub Item 3</a></li>
+          <li><a href="javascript:void(0)">Sub Item 4</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="javascript:void(0)" class="js-accordion-trigger">미디어</a>
+        <ul class="submenu">
+          <li><a href="javascript:void(0)">Sub Item 1</a></li>
+          <li><a href="javascript:void(0)">Sub Item 2</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="javascript:void(0)" class="js-accordion-trigger">소셜</a>
+        <ul class="submenu">
+          <li><a href="javascript:void(0)">Sub Item 1</a></li>
+          <li><a href="javascript:void(0)">Sub Item 2</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="javascript:void(0)" class="js-accordion-trigger">사용자</a>
+        <ul class="submenu">
+          <li><a href="javascript:void(0)">Sub Item 1</a></li>
+          <li><a href="javascript:void(0)">Sub Item 2</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div id="content">
+    <div class="mobile-device-mockup-wrapper">
+      <div id="work-space" class="work-space">
+
+      </div>
+    </div>
+  </div>
+  <div id="aside">
+    <div class="upload-content-wrapper">
+      <h5 class="upload-content-title">스캔 이미지</h5>
+
+      <hr>
+
+      <div class="upload-thumbnail">
+        <img src="{{ "images/builder/sample-uploaded-image.jpg" | prepend: site.baseurl }}" alt="">
+
+        <p><i class="fa fa-image"></i>cover01.jpg</p>
+
+        <aside>
+          <a href="javascript:void(0)" class="button">수정</a>
+          <a href="javascript:void(0)" class="button">삭제</a>
+        </aside>
+      </div>
+    </div>
+
+    <div class="upload-content-wrapper">
+      <h5 class="upload-content-title">슬라이드 이미지</h5>
+
+      <hr>
+
+      <div class="upload-thumbnail-list">
+        {% for i in (1..9) %}
+          <div class="upload-thumbnail">
+            <img src="{{ "images/builder/sample-uploaded-slide-image.jpg" | prepend: site.baseurl }}" alt="">
+
+            <p><i class="fa fa-image"></i>image0{{ i }}.jpg</p>
+
+            <aside>
+              <a href="javascript:void(0)" class="button">수정</a>
+              <a href="javascript:void(0)" class="button">삭제</a>
+            </aside>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="upload-content-wrapper">
+      <h5 class="upload-content-title">캠페인 동영상</h5>
+
+      <hr>
+
+      <div class="upload-thumbnail">
+        <img src="{{ "images/builder/sample-uploaded-video.jpg" | prepend: site.baseurl }}" alt="">
+
+        <p><i class="fa fa-play-circle-o"></i>hello.mp4</p>
+
+        <aside>
+          <a href="javascript:void(0)" class="button">수정</a>
+          <a href="javascript:void(0)" class="button">삭제</a>
+        </aside>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+  $(document).ready(function() {
+    $('.accordion li').first().addClass('is-expanded').find('.submenu').show();
+
+    $('.js-accordion-trigger').bind('click', function(e) {
+      var parent = $(this).parent();
+
+      if (!parent.hasClass('is-expanded')) {
+        var accordion = $(this).closest('.accordion');
+        accordion.find('.is-expanded').toggleClass('is-expanded');
+        accordion.find('.submenu:visible').slideToggle('fast');
+      }
+
+      parent.find('.submenu').slideToggle('fast');
+      parent.toggleClass('is-expanded');
+
+      e.preventDefault();
+    });
+  });
+</script>
