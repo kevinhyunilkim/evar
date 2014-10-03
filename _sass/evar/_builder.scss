@@ -1,0 +1,254 @@
+// Copyright (c) 2014 Kinda Labs
+
+@import "mixins";
+@import "modal";
+@import "accordion";
+
+$builder-header-height: 90px;
+
+.builder {
+  $aside-nav-width: 220px;
+  $aside-width: 225px;
+
+  background-color: white;
+
+  .header {
+    background-color: white;
+    min-width: $inner-container-width;
+    height: $builder-header-height;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,.15);
+    z-index: 5000;
+
+    .inner-container {
+      @include clearfix;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .evar-logo {
+      float: left;
+      line-height: $builder-header-height;
+      margin-right: 30px;
+
+      img {
+        vertical-align: middle;
+      }
+    }
+
+    .builder-title {
+      float: left;
+      line-height: $builder-header-height;
+      font-size: 20px;
+    }
+
+    .builder-actions {
+      float: right;
+
+      nav {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 0;
+        display: inline-block;
+        margin-right: 15px;
+        line-height: $builder-header-height;
+
+        a {
+          color: #999;
+          font-weight: bold;
+          margin-right: 15px;
+
+          img {
+            vertical-align: middle;
+            margin-right: 5px;
+            position: relative;
+            bottom: 1px;
+            opacity: .4;
+            @include transition(opacity .1s linear);
+          }
+
+          &:hover {
+            color: #333;
+
+            img {
+              opacity: .8;
+            }
+          }
+        }
+      }
+
+      label {
+        display: inline-block;
+        cursor: pointer;
+        margin: 0;
+      }
+
+      .button {
+        font-size: 14px;
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 3px;
+        color: white;
+        background-color: #999;
+        text-transform: uppercase;
+        @include transition(background-color .1s linear);
+
+        &:hover {
+          background-color: darken(#999, 15);
+        }
+
+        &.primary {
+          color: white;
+          background-color: $brand-color;
+          margin-right: 4px;
+
+          &:hover {
+            background-color: darken($brand-color, 15);
+          }
+        }
+      }
+    }
+  }
+
+  #main-container {
+    position: fixed;
+    top: $builder-header-height;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -10;
+    min-width: $inner-container-width;
+    background-color: #1d1d1d;
+  }
+
+  #aside-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $aside-nav-width;
+    bottom: 0;
+    z-index: 1;
+    background-color: #eee;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,.15);
+
+    .accordion {
+      .js-accordion-trigger {
+        background-color: white;
+        color: #666;
+      }
+
+      li {
+        > a {
+          font-weight: bold;
+          font-size: 14px;
+          padding-left: 1em;
+          padding-right: 1em;
+        }
+      }
+    }
+  }
+
+  #content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-left: $aside-nav-width;
+    margin-right: $aside-width;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  #aside {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: $aside-width;
+    bottom: 0;
+    background-color: #eee;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,.15);
+    padding: .9em;
+
+    .upload-content-wrapper {
+      padding-bottom: 1.5em;
+
+      h5 {
+        font-size: 14px;
+        color: #666;
+      }
+
+      hr {
+        margin: 1em -0.9em 1.2em;
+      }
+
+      .upload-content-button {
+        background-color: #d3d3d3;
+        padding-top: 20px;
+        padding-bottom: 50px;
+        text-align: center;
+        cursor: pointer;
+        position: relative;
+
+        a {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          display: block;
+          font-size: 14px;
+          font-weight: bold;
+          text-align: center;
+          color: white;
+          background-color: #999;
+          line-height: 40px;
+          @include transition(background-color .1s linear);
+
+          .fa {
+            vertical-align: middle;
+          }
+        }
+
+        &:hover {
+          a {
+            background-color: darken(#666, 10);
+          }
+        }
+      }
+    }
+  }
+
+  .mobile-device-mockup-wrapper {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 375px;
+    height: 729px;
+    background-image: url(../images/builder/android-mockup.png);
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: -187.5px;
+  }
+
+  #work-space {
+    position: absolute;
+    top: 67px;
+    left: 20px;
+    width: 334px;
+    height: 597px;
+    background-color: white;
+    background-color: rgba(255,255,255,.5);
+  }
+}
+
+.mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .2;
+}
+
+.checkboard {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACdJREFUeNpi3Lx5MwMqUFJSQhNhYiACDEZFLJh+uXfv3nDxHUCAAQDF6AWZdZxKKAAAAABJRU5ErkJggg==);
+}
