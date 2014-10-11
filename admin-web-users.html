@@ -25,7 +25,7 @@ layout: admin-default
         <th class="col-15p">휴대전화번호</th>
         <th class="col-10p">회원유형</th>
         <th class="col-10p">포인트</th>
-        <th class="col-18p">관리</th>
+        <th class="col-15p">관리</th>
       </tr>
     </thead>
     <tbody>
@@ -38,8 +38,8 @@ layout: admin-default
           <td>개인회원</td>
           <td>20</td>
           <td class="actions">
-            <a href="{{ "admin-web-user-detail.html" | prepend: site.baseurl }}"><i class="fa fa-cog"></i> 관리</a>
-            <a href="javascript:void(0)"><i class="fa fa-list-ul"></i> 캠페인목록</a>
+            <a href="{{ "admin-web-user-detail.html" | prepend: site.baseurl }}" class="button"><i class="fa fa-cog"></i> 관리</a>
+            <a href="javascript:void(0)" class="button"><i class="fa fa-list-ul"></i> 캠페인목록</a>
           </td>
         </tr>
       {% endfor %}

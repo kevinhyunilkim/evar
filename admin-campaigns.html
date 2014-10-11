@@ -4,11 +4,11 @@ layout: admin-default
 
 <section class="dashboard-page-content">
   <header class="dashboard-page-header">
-    <h2>앱 회원관리</h2>
+    <h2>캠페인 관리</h2>
 
     <div class="search-form">
-      <form action="" id="memberForm" name="memberForm" method="POST" onsubmit="return false;">
-        <input type="text" id="searchKeyword" name="searchKeyword" placeholder="전화번호, 성별, 시도, 구군 검색">
+      <form action="" id="campaignForm" name="campaignForm" method="POST" onsubmit="return false;">
+        <input type="text" id="searchKeyword" name="searchKeyword" placeholder="캠페인명, 회원명 검색">
         <input type="submit" id="btnSearch" value="Search">
       </form>
     </div>
@@ -20,25 +20,26 @@ layout: admin-default
     <thead>
       <tr>
         <th class="col-7p">No</th>
-        <th>휴대전화번호</th>
-        <th class="col-7p">생년</th>
-        <th class="col-7p">성별</th>
-        <th class="col-12p">시도</th>
-        <th class="col-12p">구군</th>
-        <th class="col-7p">관리</th>
+        <th>캠페인 명</th>
+        <th class="col-7p">회원번호</th>
+        <th class="col-12p">회원명</th>
+        <th class="col-10p">누적 소진 포인트</th>
+        <th class="col-10p">인식수</th>
+        <th class="col-20p">비고</th>
       </tr>
     </thead>
     <tbody>
       {% for i in (1..20) %}
         <tr>
-          <td>1053</td>
-          <td>010-4524-2898</td>
-          <td>1989</td>
-          <td>남</td>
-          <td>서울특별시</td>
-          <td>동작구</td>
+          <td>140</td>
+          <td>월드컵 티셔츠</td>
+          <td>6</td>
+          <td>홍성철</td>
+          <td>1136</td>
+          <td>1136</td>
           <td class="actions">
-            <a href="{{ "admin-app-user-detail.html" | prepend: site.baseurl }}" class="button"><i class="fa fa-cog"></i> 관리</a>
+            <a href="javascript:void(0)" class="button"><i class="fa fa-cogs"></i> 캠페인 상세</a>
+            <a href="javascript:void(0)" class="button"><i class="fa fa-download"></i> 데이터 내려받기</a>
           </td>
         </tr>
       {% endfor %}
