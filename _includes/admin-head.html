@@ -1,0 +1,16 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ site.description }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="{{ "css/normalize.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "css/dashboard.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" type="text/css" href="http://cloud.typography.com/6242312/709766/css/fonts.css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="{{ "js/jquery-ui.js" | prepend: site.baseurl }}"></script>
+  <script src="{{ "js/evar-dashboard.js" | prepend: site.baseurl }}"></script>
+</head>

@@ -1,0 +1,65 @@
+---
+layout: admin-default
+---
+
+<section class="dashboard-page-content">
+  <header class="dashboard-page-header">
+    <h2>앱 회원관리</h2>
+
+    <div class="search-form">
+      <form action="" id="memberForm" name="memberForm" method="POST" onsubmit="return false;">
+        <input type="text" id="searchKeyword" name="searchKeyword" placeholder="전화번호, 성별, 시도, 구군 검색">
+        <input type="submit" id="btnSearch" value="Search">
+      </form>
+    </div>
+  </header>
+
+  <hr>
+
+  <table class="dashboard-table">
+    <thead>
+      <tr>
+        <th class="col-7p">No</th>
+        <th>휴대전화번호</th>
+        <th class="col-7p">생년</th>
+        <th class="col-7p">성별</th>
+        <th class="col-12p">시도</th>
+        <th class="col-12p">구군</th>
+        <th class="col-10p">관리</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in (1..20) %}
+        <tr>
+          <td>1053</td>
+          <td>010-4524-2898</td>
+          <td>1989</td>
+          <td>남</td>
+          <td>서울특별시</td>
+          <td>동작구</td>
+          <td class="actions">
+            <a href="javascript:void(0)"><i class="fa fa-cog"></i> 관리</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <div class="pagination">
+    <ul>
+      <li class="page-first"><a href="javascript:void(0)">처음</a></li>
+      <li class="page-prev"><a href="javascript:void(0)">이전</a></li>
+      <li>
+        <ul>
+          <li><a href="javascript:void(0)">1</a></li>
+          <li><a href="javascript:void(0)" class="active">2</a></li>
+          <li><a href="javascript:void(0)">3</a></li>
+          <li><a href="javascript:void(0)">4</a></li>
+          <li><a href="javascript:void(0)">5</a></li>
+        </ul>
+      </li>
+      <li class="page-next"><a href="javasciprt:void(0)">다음</a></li>
+      <li class="page-last"><a href="javascript:void(0)">마지막</a></li>
+    </ul>
+  </div>
+</section>

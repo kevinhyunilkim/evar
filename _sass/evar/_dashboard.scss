@@ -107,6 +107,20 @@ $dashboard-header-height: 90px;
   }
 }
 
+.dashboard-page-content {
+  @include inner-container;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 50px;
+  padding-bottom: 100px;
+
+  .dashboard-page-header {
+    h2 {
+      font-size: 24px;
+    }
+  }
+}
+
 .settings,
 .password-reset,
 .statistics {
@@ -983,6 +997,108 @@ $dashboard-header-height: 90px;
           font-weight: bold;
         }
       }
+    }
+  }
+}
+
+.dashboard-table {
+  border: 1px solid darken(#e9e9e9, 5);
+  font-size: 14px;
+
+  .col-7p {
+    width: 7%;
+  }
+
+  .col-10p {
+    width: 10%;
+  }
+
+  .col-12p {
+    width: 12%;
+  }
+
+  .col-15p {
+    width: 15%;
+  }
+
+  .col-18p {
+    width: 18%;
+  }
+
+  thead {
+    th {
+      background-color: #e9e9e9;
+      text-align: center;
+      border: 1px solid darken(#e9e9e9, 5);
+    }
+  }
+
+  tbody {
+    tr.stat-row:hover {
+      td {
+        background-color: #eee;
+
+        &:hover {
+          background-color: darken(#eee, 5);
+        }
+      }
+    }
+
+    td {
+      background-color: white; text-align: center;
+      border: 1px solid #ddd;
+      @include transition(background-color .2s linear);
+
+      &.stat-title {
+        text-align: left;
+        font-weight: bold;
+        padding-left: 15px;
+      }
+
+      &.stat-total {
+        font-weight: bold;
+      }
+
+      &.actions {
+        a {
+          margin: 0 5px;
+
+          .fa {
+            color: $medium-gray;
+            margin-right: 2px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.dashboard-page-content .pagination {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.dashboard-page-header {
+  position: relative;
+
+  .search-form {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    input[type=submit] {
+      font-size: 14px;
+    }
+
+    input[type=text] {
+      @include appearance(none);
+      padding: .68em .68em;
+      font-size: 14px;
+      border-radius: $base-border-radius;
+      margin: 0;
+      width: 220px;
+      display: inline-block;
+      vertical-align: middle;
     }
   }
 }

@@ -7,7 +7,7 @@ layout: dashboard-default
     <h2>캠페인 통계보기</h2>
 
     <div class="search-form">
-      <form action="" id="statForm" name="statForm" method="POST">
+      <form action="" id="statForm" name="statForm" method="POST" onsubmit="return false;">
         <div class="button-group">
           <label>
             <input type="radio" name="searchCondition" value="1" checked>
@@ -29,7 +29,7 @@ layout: dashboard-default
           </div>
         </div>
 
-        <input type="submit" id="#btnSearch" value="View">
+        <input type="submit" id="btnSearch" value="View">
       </form>
     </div>
   </header>
