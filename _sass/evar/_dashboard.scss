@@ -278,6 +278,21 @@ $dashboard-header-height: 90px;
         margin-bottom: 0;
         color: #666;
       }
+
+      .labels-horizontal {
+        label {
+          margin: 0;
+          display: inline-block;
+          line-height: 37px;
+          margin-right: 1em;
+          cursor: pointer;
+          font-size: inherit;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
     }
   }
 
