@@ -1,0 +1,153 @@
+---
+layout: admin-default
+---
+
+<section class="settings">
+  <header>
+    <h2>웹 회원관리: 유지현</h2>
+  </header>
+
+  <hr>
+
+  <form onsubmit="return false">
+    <div class="form-group">
+      <div class="form-label">
+        <label for="field-name">이름</label>
+      </div>
+      <div class="form-field">
+        <input type="text" name="field-name" id="field-name" value="유지현">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-label">
+        <label for="field-email">이메일</label>
+      </div>
+      <div class="form-field">
+        <input type="email" name="field-email" id="field-email" value="Photobyuz@naver.com">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-label">
+        <label for="field-phone">휴대전화번호</label>
+      </div>
+      <div class="form-field">
+        <div class="field-phone-wrapper">
+          <select name="phone-area" class="phone-area">
+            <option value="010">010</option>
+            <option value="011">011</option>
+            <option value="016">016</option>
+            <option value="017">017</option>
+            <option value="018">018</option>
+            <option value="019">019</option>
+          </select>
+          <input type="text" name="phone-number-1" class="phone-number" maxlength="4" value="4680">
+          <input type="text" name="phone-number-2" class="phone-number" maxlength="4" value="1742">
+        </div>
+        <label>
+          <input type="checkbox" class="checkbox" name="checkbox-accept-sms" value="">
+          문자수신 허용
+        </label>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-label">
+        <label for="field-member-type">회원유형</label>
+      </div>
+      <div class="form-field">
+        <div class="field-phone-wrapper">
+          <select name="phone-area" class="phone-area">
+            <option value="개인회원">개인회원</option>
+            <option value="기업회원">기업회원</option>
+            <option value="에이전시">에이전시</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="form-group">
+      <div class="form-label">
+        <label for="field-point">보유 포인트</label>
+      </div>
+      <div class="form-field point-field">
+        <p class="static-text">15,000 Point</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-label">
+        <label for="field-add-point">추가할 포인트</label>
+      </div>
+      <div class="form-field">
+        <div class="add-point-fields">
+          <input type="text" name="point" value="" placeholder="0" class="textfield shorter">
+          <input type="text" name="name" value="" placeholder="비고" class="textfield short">
+          <a href="javascript:void(0)" class="button">추가</a>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="form-buttons">
+      <a href="javascript:void(0)" class="button cancel">취소</a>
+      <input type="submit" value="수정" class="button">
+    </div>
+  </form>
+
+  <br><br>
+
+  <div class="form-group">
+    <div class="form-label">
+      <label for="field-point-history">포인트 내역</label>
+    </div>
+  </div>
+  <table class="point-history-table">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>일자</th>
+        <th>포인트</th>
+        <th>거래번호</th>
+        <th>결제금액</th>
+        <th>결제방법법</th>
+        <th>결제일자</th>
+        <th>적용여부</th>
+        <th>관리</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>5</td>
+        <td>2014-07-19</td>
+        <td>20 Point</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>적용</td>
+        <td class="actions">
+          <a href="javascript:void(0)" class="button">포인트 취소</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="pagination">
+    <ul>
+      <li class="page-first"><a href="javascript:void(0)">처음</a></li>
+      <li class="page-prev"><a href="javascript:void(0)">이전</a></li>
+      <li>
+        <ul>
+          <li><a href="javascript:void(0)">1</a></li>
+          <li><a href="javascript:void(0)" class="active">2</a></li>
+          <li><a href="javascript:void(0)">3</a></li>
+          <li><a href="javascript:void(0)">4</a></li>
+          <li><a href="javascript:void(0)">5</a></li>
+        </ul>
+      </li>
+      <li class="page-next"><a href="javasciprt:void(0)">다음</a></li>
+      <li class="page-last"><a href="javascript:void(0)">마지막</a></li>
+    </ul>
+  </div>
+</section>

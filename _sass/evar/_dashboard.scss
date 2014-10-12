@@ -277,6 +277,7 @@ $dashboard-header-height: 90px;
         margin-top: 10px;
         margin-bottom: 0;
         color: #666;
+        cursor: pointer;
       }
 
       .labels-horizontal {
@@ -312,6 +313,26 @@ $dashboard-header-height: 90px;
       td {
         background-color: white;
         text-align: center;
+
+        &.actions {
+          .button {
+            @extend button;
+            background-color: $medium-gray;
+            padding: .5em;
+            color: white;
+            font-size: 12px;
+
+            .fa {
+              color: inherit;
+              margin-right: 2px;
+            }
+
+            &:hover {
+              background-color: darken($medium-gray, 15);
+              color: white;
+            }
+          }
+        }
       }
     }
   }
@@ -1132,5 +1153,22 @@ $dashboard-header-height: 90px;
       display: inline-block;
       vertical-align: middle;
     }
+  }
+}
+
+.add-point-fields {
+  input {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.textfield {
+  &.short {
+    width: 250px;
+  }
+
+  &.shorter {
+    width: 130px;
   }
 }
